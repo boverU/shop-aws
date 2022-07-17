@@ -1,0 +1,37 @@
+[
+    {
+        "id": 1,
+        "title": "SUUNTO 9 Baro",
+        "description": "Premium GPS Running, Cycling, Adventure Watch with Route Navigation, Large 50mm Size Touch Screen, up to 170 Hours GPS Battery Life",
+        "photo": "https://m.media-amazon.com/images/I/61PK1r9jWLL._AC_UL480_FMwebp_QL65_.jpg",
+        "price": "599$"
+    },
+    {
+        "id": 2,
+        "title": "Garmin fenix 6x",
+        "description": "Premium Multisport GPS Watch, features Mapping, Music, Grade-Adjusted Pace Guidance and Pulse Ox Sensors, Dark Gray with Black Band",
+        "photo": "https://m.media-amazon.com/images/I/81mEkjYa+5L._AC_UL480_FMwebp_QL65_.jpg",
+        "price": "730$"
+    },
+    {
+        "id": 3,
+        "title": "Firbid versa 2",
+        "description": "Health and Fitness Smartwatch with Heart Rate, Music, Alexa Built-In, Sleep and Swim Tracking, Petal/Copper Rose, One Size (S and L Bands Included)",
+        "photo": "https://m.media-amazon.com/images/I/61L5Jko2QqL._AC_UL480_FMwebp_QL65_.jpg",
+        "price": "103.48$"
+    },
+    {
+        "id": 4,
+        "title": "Garmin Instinct Solar",
+        "description": " Rugged Outdoor Smartwatch with Solar Charging Capabilities, Built-in Sports Apps and Health Monitoring, Sunburst Yellow",
+        "photo": "https://m.media-amazon.com/images/I/71QZ2uROTiL._AC_UL480_FMwebp_QL65_.jpg",
+        "price": "359.99$"
+    },
+    {
+        "id": 5,
+        "title": "Yussa smart watch",
+        "description": "Latest Generation 2022 | Blood Pressure Monitor | Blood Oxygen SpO2 | Heart Rate | Sleep Monitor | IP67 Waterproof | Fitness Tracker | for Women and Men",
+        "photo": "https://m.media-amazon.com/images/I/61-ZhJ9GzUL._AC_UL480_FMwebp_QL65_.jpg",
+        "price": "79.99$"
+    }
+]
