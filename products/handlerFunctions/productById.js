@@ -1,6 +1,6 @@
 const fs = require('fs').promises;
 
-module.exports.productById = async (event) => {
+export const productById = async (event) => {
     const allData = await fs.readFile('./mockData.json');
     const found = (JSON.parse(allData.toString())).find(product => product.id === Number(event.pathParameters.id));
     if (found) {

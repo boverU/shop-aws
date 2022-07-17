@@ -1,6 +1,6 @@
 const fs = require('fs').promises;
 
-module.exports.products = async (_event) => {
+export const products = async (_event) => {
     const data = await fs.readFile('./mockData.json')
     return {
         statusCode: 200,
