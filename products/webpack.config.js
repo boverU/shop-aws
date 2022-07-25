@@ -27,6 +27,7 @@ module.exports = {
     plugins: [new CopyPlugin({
         patterns: [
             { from: './mockData.json', to: 'mockData.json' },
+            { from: './dbconfig', to: 'dbcConfig.json' }
         ]
     }
     )]
