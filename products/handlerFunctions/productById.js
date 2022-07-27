@@ -1,5 +1,6 @@
 import DBPool from './dbconfig'
 import { consoleRequest } from './utils'
+import { responseHandler } from './utils/responseHandler'
 
 export const productById = async (event, context) => {
     consoleRequest(event, context)
@@ -11,38 +12,12 @@ export const productById = async (event, context) => {
                 values: [event.pathParameters.id],
             }
         )
-
-
         if (rows.length > 0) {
-            return {
-                statusCode: 200,
-                headers: {
-                    "Access-Control-Allow-Headers": "Content-Type",
-                    "Access-Control-Allow-Origin": "*",
-                    "Access-Control-Allow-Methods": "POST,GET,DELETE,PUT"
-                },
-                body: JSON.stringify(rows[0])
-            }
+            return responseHandler(200, JSON.stringify(rows[0]))
         }
-        return {
-            statusCode: 404,
-            headers: {
-                "Access-Control-Allow-Headers": "Content-Type",
-                "Access-Control-Allow-Origin": "*",
-                "Access-Control-Allow-Methods": "POST,GET,DELETE,PUT"
-            },
-            body: `Product under id ${event.pathParameters.id} not found`
-        }
+        return responseHandler(404, `Product under id ${event.pathParameters.id} not found`)
     } catch (error) {
-        return {
-            statusCode: 500,
-            headers: {
-                "Access-Control-Allow-Headers": "Content-Type",
-                "Access-Control-Allow-Origin": "*",
-                "Access-Control-Allow-Methods": "POST,GET,DELETE,PUT"
-            },
-            body: `${error.stack}`
-        }
+        return responseHandler(500, error.stack);
     }
 
 }
