@@ -8,7 +8,7 @@ export const products = async (_event) => {
             headers: {
                 "Access-Control-Allow-Headers": "Content-Type",
                 "Access-Control-Allow-Origin": "*",
-                "Access-Control-Allow-Methods": "OPTIONS,POST,GET"
+                "Access-Control-Allow-Methods": "POST,GET,DELETE,PUT"
             },
             body: JSON.stringify(result.rows)
         };
@@ -18,7 +18,7 @@ export const products = async (_event) => {
             headers: {
                 "Access-Control-Allow-Headers": "Content-Type",
                 "Access-Control-Allow-Origin": "*",
-                "Access-Control-Allow-Methods": "OPTIONS,POST,GET"
+                "Access-Control-Allow-Methods": "POST,GET,DELETE,PUT"
             },
             body: error.stack
         };

@@ -17,7 +17,7 @@ export const productById = async (event, context) => {
                 headers: {
                     "Access-Control-Allow-Headers": "Content-Type",
                     "Access-Control-Allow-Origin": "*",
-                    "Access-Control-Allow-Methods": "OPTIONS,POST,GET"
+                    "Access-Control-Allow-Methods": "POST,GET,DELETE,PUT"
                 },
                 body: JSON.stringify(rows[0])
             }
@@ -27,7 +27,7 @@ export const productById = async (event, context) => {
             headers: {
                 "Access-Control-Allow-Headers": "Content-Type",
                 "Access-Control-Allow-Origin": "*",
-                "Access-Control-Allow-Methods": "OPTIONS,POST,GET"
+                "Access-Control-Allow-Methods": "POST,GET,DELETE,PUT"
             },
             body: `Product under id ${event.pathParameters.id} not found`
         }
@@ -37,7 +37,7 @@ export const productById = async (event, context) => {
             headers: {
                 "Access-Control-Allow-Headers": "Content-Type",
                 "Access-Control-Allow-Origin": "*",
-                "Access-Control-Allow-Methods": "OPTIONS,POST,GET"
+                "Access-Control-Allow-Methods": "POST,GET,DELETE,PUT"
             },
             body: `${error.stack}`
         }
