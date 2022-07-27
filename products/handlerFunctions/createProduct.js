@@ -1,7 +1,9 @@
 import DBPool from './dbconfig'
+import { consoleRequest } from './utils';
 
-export const createProduct = async (event) => {
+export const createProduct = async (event, context) => {
     const data = JSON.parse(event.body);
+    consoleRequest(event, context)
     try {
         await DBPool.query('BEGIN');
         const queryText = `insert into product(title, price, description) values($1, $2, $3) returning id, title, description`;
@@ -22,7 +24,7 @@ export const createProduct = async (event) => {
     } catch (error) {
         await DBPool.query('ROLLBACK');
         return {
-            statusCode: 400,
+            statusCode: 500,
             headers: {
                 "Access-Control-Allow-Headers": "Content-Type",
                 "Access-Control-Allow-Origin": "*",

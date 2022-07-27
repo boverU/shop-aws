@@ -1,6 +1,8 @@
 import DBPool from './dbconfig'
+import { consoleRequest } from './utils'
 
 export const productById = async (event, context) => {
+    consoleRequest(event, context)
     try {
         const { rows } = await DBPool.query(
             {
@@ -33,7 +35,7 @@ export const productById = async (event, context) => {
         }
     } catch (error) {
         return {
-            statusCode: 400,
+            statusCode: 500,
             headers: {
                 "Access-Control-Allow-Headers": "Content-Type",
                 "Access-Control-Allow-Origin": "*",

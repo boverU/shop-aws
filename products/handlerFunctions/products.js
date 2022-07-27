@@ -1,6 +1,8 @@
 import DBPool from './dbconfig'
+import { consoleRequest } from './utils'
 
-export const products = async (_event) => {
+export const products = async (event, context) => {
+    consoleRequest(event, context)
     try {
         const result = await DBPool.query('SELECT product.id,product.title, product.description, product.price , stock.count FROM stock INNER JOIN product ON stock.product_id = product.id')
         return {
@@ -14,7 +16,7 @@ export const products = async (_event) => {
         };
     } catch (error) {
         return {
-            statusCode: 400,
+            statusCode: 500,
             headers: {
                 "Access-Control-Allow-Headers": "Content-Type",
                 "Access-Control-Allow-Origin": "*",
