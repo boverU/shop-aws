@@ -1,0 +1,30 @@
+create table if not exists product(
+	id uuid not null default uuid_generate_v4() primary key,
+	title text not null,
+	description text not null,
+	price integer not null
+);
+
+create table if not exists stock(
+	id uuid not null default uuid_generate_v4() primary key,
+	count integer not null
+);
+
+alter table if exists stock add column product_id uuid references product(id);
+
+insert into product (title, description, price) values ('SSUUANTO 9 Baro', 
+'Premium GPS Running, Cycling, Adventure Watch with Route Navigation, 
+Large 50mm Size Touch Screen, up to 170 Hours GPS Battery Life', 599);
+
+insert into product (title, description, price) values ('Garmin fenix 6x', 
+'Premium Multisport GPS Watch, features Mapping, Music, Grade-Adjusted Pace Guidance and Pulse Ox Sensors, Dark Gray with Black Band',
+ 730);
+
+INSERT INTO public.stock
+(id, count, product_id)
+VALUES(uuid_generate_v4(), 15, '3eaaf5f9-371b-44df-bbe3-876c6bfa01b0');
+
+
+INSERT INTO public.stock
+(id, count, product_id)
+VALUES(uuid_generate_v4(), 15, '2a8aff57-eb0d-446e-808b-c560a3a264b9');
