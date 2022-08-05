@@ -9,7 +9,8 @@ export const formatJSONResponse = (statusCode: number, response: any) => {
     statusCode,
     headers: {
       'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Headers': '*'
+      'Access-Control-Allow-Headers': "Origin, X-Requested-With, Content-Type, Accept",
+      "Access-Control-Allow-Methods": "OPTIONS,POST,GET,DELETE,PUT"
     },
     body: JSON.stringify(response),
   }
